@@ -6,9 +6,9 @@ class RedBomb extends Bomb{
         this.width=50
         this.height=50
         this.x=this.getRandom(0,100);
-        this.y=obj.y
+        this.y=obj.y;
         this.duration=1000;
-        this.receives()
+        this.receives();
         this.loop(this.interval,this.duration)
         
     }

@@ -30,7 +30,7 @@ class Bomb{ // Classe PAI
         return tag
     }
     receives(){
-        this.element.style=`position:absolute;top:${this.y}%;left:${this.x}%;background:${this.color};width:${this.width}px;height:${this.height}px;border-radius:360px;`
+        this.element.style=`position:absolute;top:${this.y}%;left:${this.x}%;background:${this.color};background-size: 100% 100%;width:${this.width}px;height:${this.height}px;border-radius:360px;`
     }
     removeEl(){
         this.element.remove()

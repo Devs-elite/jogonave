@@ -5,11 +5,13 @@ const CONFIG ={
     y:0,
     duration:100// essa é o tempo que levará para o objeto sumir da tela
 }
-
+//EXEMPLOS
 function invoke(){
-    new SnowFall(CONFIG)
-    new RedBomb(CONFIG)
+    new Booom(CONFIG)
+    //new SnowFall(CONFIG)
+    //new RedBomb(CONFIG)
 }
+//-------------------
 setInterval(function(){
     document.hasFocus()?invoke():0
 },1000)

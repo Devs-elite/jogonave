@@ -1,14 +1,14 @@
 class Bomb{
-    constructor(place,x,y,removeSnowDuration,color=null){
+    constructor(place,x,y,duration,color=null){
         this.element=this.addEl({place,tag:"div"});
         this.color=color?color:"rgb(255,255,255)";//default color
         this.interval=10
         this.x=x
         this.y=y
-        this.removeSnowDuration=removeSnowDuration;
+        this.duration=duration;
         this.body = place;
         this.receives()
-        this.loop(this.interval,this.removeSnowDuration)
+        this.loop(this.interval,this.duration)
     }
     addEl(obj){
         /*
@@ -42,13 +42,13 @@ class Bomb{
     removeEl(){
         this.element.remove()
     }
-    loop(interval,removeSnowDuration){
+    loop(interval,duration){
         let cont=this.element.offsetTop;
        let loop = setInterval(() => {
             this.element.style.top=cont+"px"
             if(this.element.offsetTop+this.element.offsetHeight>=this.body.offsetHeight){
                 clearInterval(loop)
-                this.element.style.transition=`height ${removeSnowDuration/1000}s, top ${removeSnowDuration/1000}s`
+                this.element.style.transition=`height ${duration/1000}s, top ${duration/1000}s`
                 //cont=0;
                 this.element.style.width=this.element.offsetHeight+this.element.offsetHeight+"px"
                 this.element.style.borderRadius="50px 50px 0px 0px"
@@ -57,7 +57,7 @@ class Bomb{
                 
                 setTimeout(() => {
                     this.removeEl() 
-                },removeSnowDuration);
+                },duration);
             }
             cont++;
         }, (interval));

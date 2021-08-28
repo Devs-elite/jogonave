@@ -1,4 +1,4 @@
-class Bomb{
+class Bomb{ // Classe PAI
     constructor(place){
         this.element=this.addEl({place,tag:"div"});
         this.body = place;

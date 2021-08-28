@@ -1,6 +1,7 @@
-html{padding: 0px;margin: 0px;}
+html{padding: 0px;margin: 0px;overflow: hidden;}
 body{
     padding: 0px;margin: 0px;
     width: 95vw;
     height: 100vh;
+    background-color: black;
 }

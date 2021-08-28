@@ -1,15 +1,15 @@
 //element,removeSnowDuration=20000,body,x,y
 const CONFIG ={
-    
     place:document.body,
     x:50,
-    y:0
-}
-let val = true
-function getRandom(min, max) {
-    return Math.random() * (max - min) + min;
+    y:0,
+    duration:100// essa é o tempo que levará para o objeto sumir da tela
 }
 
+function invoke(){
+    new SnowFall(CONFIG)
+    new RedBomb(CONFIG)
+}
 setInterval(function(){
-    document.hasFocus()?new Bomb(CONFIG.place,getRandom(0, 100),CONFIG.y,1000,"black"):0
+    document.hasFocus()?invoke():0
 },1000)

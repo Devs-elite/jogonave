@@ -1,14 +1,7 @@
 class Bomb{
-    constructor(place,x,y,duration,color=null){
+    constructor(place){
         this.element=this.addEl({place,tag:"div"});
-        this.color=color?color:"rgb(255,255,255)";//default color
-        this.interval=10
-        this.x=x
-        this.y=y
-        this.duration=duration;
         this.body = place;
-        this.receives()
-        this.loop(this.interval,this.duration)
     }
     addEl(obj){
         /*
@@ -37,10 +30,20 @@ class Bomb{
         return tag
     }
     receives(){
-        this.element.style=`position:absolute;top:${this.y}%;left:${this.x}%;background:${this.color};width:4px;height:4px;border-radius:360px;`
+        this.element.style=`position:absolute;top:${this.y}%;left:${this.x}%;background:${this.color};width:${this.width}px;height:${this.height}px;border-radius:360px;`
     }
     removeEl(){
         this.element.remove()
+    }
+    getRandom(min, max) {
+        return Math.random() * (max - min) + min;
+    }
+    fallen(duration){
+        this.element.style.transition=`height ${duration/1000}s, top ${duration/1000}s`
+        this.element.style.width=this.element.offsetHeight+this.element.offsetHeight+"px"
+        this.element.style.borderRadius="50px 50px 0px 0px"
+        this.element.style.height="0px"
+        this.element.style.top=this.body.offsetHeight+"px"
     }
     loop(interval,duration){
         let cont=this.element.offsetTop;
@@ -48,12 +51,7 @@ class Bomb{
             this.element.style.top=cont+"px"
             if(this.element.offsetTop+this.element.offsetHeight>=this.body.offsetHeight){
                 clearInterval(loop)
-                this.element.style.transition=`height ${duration/1000}s, top ${duration/1000}s`
-                //cont=0;
-                this.element.style.width=this.element.offsetHeight+this.element.offsetHeight+"px"
-                this.element.style.borderRadius="50px 50px 0px 0px"
-                this.element.style.height="0px"
-                this.element.style.top=this.body.offsetHeight+"px"
+                this.fallen(duration);
                 setTimeout(() => {
                     this.removeEl() 
                 },duration);

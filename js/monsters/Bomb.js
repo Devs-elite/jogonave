@@ -54,7 +54,6 @@ class Bomb{
                 this.element.style.borderRadius="50px 50px 0px 0px"
                 this.element.style.height="0px"
                 this.element.style.top=this.body.offsetHeight+"px"
-                
                 setTimeout(() => {
                     this.removeEl() 
                 },duration);

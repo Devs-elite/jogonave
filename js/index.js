@@ -1,4 +1,4 @@
-//element,removeSnowDuration=20000,body,x,y
+
 const CONFIG ={
     place:document.body,
     x:50,

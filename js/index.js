@@ -1,6 +1,6 @@
 
 const CONFIG ={
-    place:document.body,
+    place:document.body,// aqui configura a área do game, ou seja, voce define dentro de qual tag acontecerá as animações
     x:50,
     y:0,
     duration:100// essa é o tempo que levará para o objeto sumir da tela

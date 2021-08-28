@@ -5,7 +5,9 @@ const CONFIG ={
     x:50,
     y:0
 }
-console.log(CONFIG.place)
+function getRandom(min, max) {
+    return Math.random() * (max - min) + min;
+}
 setInterval(function(){
-    new Bomb(CONFIG.place,CONFIG.x,CONFIG.y,1000,"black")
+    new Bomb(CONFIG.place,getRandom(0, 100),CONFIG.y,1000,"black")
 },1000)

@@ -8,8 +8,8 @@ const CONFIG ={
 //EXEMPLOS
 function invoke(){
     new Booom(CONFIG)
-    //new SnowFall(CONFIG)
-    //new RedBomb(CONFIG)
+    new SnowFall(CONFIG)
+    new RedBomb(CONFIG)
 }
 //-------------------
 setInterval(function(){

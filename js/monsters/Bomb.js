@@ -39,7 +39,7 @@ class Bomb{ // Classe PAI
         return Math.random() * (max - min) + min;
     }
     fallen(duration){
-        //Quando caído escolhar fazer alguma coisa setando o paramento com um tempo em milissegundos
+        //Quando caído escolher fazer alguma coisa com base no paramento com um tempo em milissegundos determinado
         
     }
     loop(interval,duration){

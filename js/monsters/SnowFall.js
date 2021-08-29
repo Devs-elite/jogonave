@@ -12,4 +12,11 @@ class SnowFall extends Bomb{
         this.loop(this.interval,this.duration)
         
     }
+    fallen(duration){
+        this.element.style.transition=`height ${duration/1000}s, top ${duration/1000}s`
+        this.element.style.width=this.element.offsetHeight+this.element.offsetHeight+"px"
+        this.element.style.borderRadius="50px 50px 0px 0px"
+        this.element.style.height="0px"
+        this.element.style.top=this.body.offsetHeight+"px"
+    }
 }

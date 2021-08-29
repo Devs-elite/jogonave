@@ -39,11 +39,8 @@ class Bomb{ // Classe PAI
         return Math.random() * (max - min) + min;
     }
     fallen(duration){
-        this.element.style.transition=`height ${duration/1000}s, top ${duration/1000}s`
-        this.element.style.width=this.element.offsetHeight+this.element.offsetHeight+"px"
-        this.element.style.borderRadius="50px 50px 0px 0px"
-        this.element.style.height="0px"
-        this.element.style.top=this.body.offsetHeight+"px"
+        //Quando caído escolhar fazer alguma coisa setando o paramento com um tempo em milissegundos
+        
     }
     loop(interval,duration){
         let cont=this.element.offsetTop;
